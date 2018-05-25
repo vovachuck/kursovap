@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>grouptourist</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+          integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body ng-app="App">
+GroupTourist
+<div ng-controller="GroupTourist as ctrl" id="block">
+    <div class="container-fluid">
+        <div class="datagrid">
+            <table>
+                <thead>
+                <tr>
+                    <th width="40px">Ідентифікатор</th>
+                    <th>Ім'я</th>
+                    <th>Прізвище</th>
+                    <th>По батькові</th>
+                    <th>Дата видачі паспорта</th>
+                    <th>Стать</th>
+                    <th>Діти</th>
+                    <th>Бажаний готель</th>
+                    <th>Вік</th>
+                    <th>Категорія</th>
+                    <th>Назва групи</th>
+                    <th>Дата народження</th>
+
+
+                    <th width="65px">
+                        <button type="button" class="btn-success" data-toggle="modal" data-target="#addModal"
+                                style="width: 63px">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in grouptourist">
+                    <td scope="row">{{item.idGroupTourist}}</td>
+                    <td scope="row">{{item.firstName}}</td>
+                    <td scope="row">{{item.lastName}}</td>
+                    <td scope="row">{{item.surName}}</td>
+                    <td scope="row">{{item.passportData}}</td>
+                    <td scope="row">{{item.gender}}</td>
+                    <td scope="row">{{item.kids}}</td>
+                    <td scope="row">{{item.hotel}}</td>
+                    <td scope="row">{{item.old}}</td>
+                    <td scope="row">{{item.category}}</td>
+                    <td scope="row">{{item.nameGroup}}</td>
+                    <td scope="row">{{item.dateOfBirth}}</td>
+
+                    <td scope="row">
+                        <button type="button" class="btn-warning" data-toggle="modal" data-target="#updateModal"
+                                ng-click="ctrl.startUpdateGroup(item.idGroupTourist,item.firstName,item.lastName,
+                                item.surName,item.passportData,item.gender,item.kids,
+                                item.hotel,item.old,item.category,item.nameGroup,item.dateOfBirth)"
+                                style="width: 30px">
+                            <i class="fas fa-pencil-alt"></i>
+                        </button>
+                        <button type="button" class="btn-danger" ng-click="ctrl.delFromGroup(item.idGroupTourist)"
+                                style="width: 30px">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--добавление Hotel-->
+        <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addModalLabel">Добавлення</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрити">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        Ім'я
+                        <br>
+                        <input type="text" id="firstName">
+                        <br>
+                        Прізвище
+                        <br>
+                        <input type="text" id="lastName">
+                        <br>
+                        По батькові
+                        <br>
+                        <input type="text" id="surName">
+                        <br>
+                        Дата видачі паспорта
+                        <br>
+                        <input type="date" id="passportData">
+                        <br>
+                        Стать
+                        <br>
+                        <input type="text" id="gender">
+                        <br>
+                        Діти
+                        <br>
+                        <input type="text" id="kids">
+                        <br>
+                        Бажаний готель
+                        <br>
+                        <input type="text" id="hotel">
+                        <br>
+                        Вік
+                        <br>
+                        <input type="number" id="old">
+                        <br>
+                        Категорія
+                        <br>
+                        <input type="text" id="category">
+                        <br>
+                        Назва групи
+                        <br>
+                        <input type="text" id="nameGroup">
+                        <br>
+                        Дата народження
+                        <br>
+                        <input type="date" id="dateOfBirth">
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+                        <button type="button" class="btn btn-primary" ng-click="ctrl.insertToGroup()">Добавити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--обновленіє Hotel-->
+        <div class="modal fade" id="updateModal" tabindex="-2" role="dialog" aria-labelledby="updateModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="updateModalLabel">Обновлення</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Закрити">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+
+
+                    <div class="modal-body">
+
+                        <div id="idGroupTouristUPD"></div>
+                        Ім'я
+                        <br>
+                        <input type="text" id="firstNameUPD">
+                        <br>
+                        Прізвище
+                        <br>
+                        <input type="text" id="lastNameUPD">
+                        <br>
+                        По батькові
+                        <br>
+                        <input type="text" id="surNameUPD">
+                        <br>
+                        Дата видачі паспорта
+                        <br>
+                        <input type="date" id="passportDataUPD">
+                        <br>
+                        Стать
+                        <br>
+                        <input type="text" id="genderUPD">
+                        <br>
+                        Діти
+                        <br>
+                        <input type="text" id="kidsUPD">
+                        <br>
+                        Бажаний готель
+                        <br>
+                        <input type="text" id="hotelUPD">
+                        <br>
+                        Вік
+                        <br>
+                        <input type="number" id="oldUPD">
+                        <br>
+                        Категорія
+                        <br>
+                        <input type="text" id="categoryUPD">
+                        <br>
+                        Назва групи
+                        <br>
+                        <input type="text" id="nameGroupUPD">
+                        <br>
+                        Дата народження
+                        <br>
+                        <input type="date" id="dateOfBirthUPD">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрити</button>
+                        <button type="button" class="btn btn-primary" ng-click="ctrl.updateGroup()">Обновити</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+</body>
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/GroupTourist.js"></script>
+
+</html>
