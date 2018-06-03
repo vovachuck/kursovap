@@ -1,18 +1,20 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Запит №2</title>
+    <title>Запит №7</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body ng-app = "kursova" style="margin: 15px">
 <div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" ><!--class="container"-->
     <div><a href="/" style="float: left;" ><<<</a></div>
-        <div class="panel-heading"> Списки на розселення  </div>
+        <div class="panel-heading"> Повний фінансовий звіт  </div>
         <div  style="font-size: 20px">
-            Готель:
-
-            <select id="hotelName">
+            Група:
+            <select id="nameGroup">
+            </select>
+            Категорія:
+            <select id="category">
             </select>
             <a>&ensp;</a><button  class="button-main" style="width: 90px; height: 30px; padding: 0px;font-size: 16px"
                                   ng-click="ctrl.update_request()">
@@ -26,20 +28,24 @@
                 <thead>
                 <tr>
                     <th width="40px">Id</th>
-                    <th>Ім'я </th>
-                    <th>Прізвище </th>
-                    <th>По-батькові </th>
+                    <th>Вартість готеля </th>
+                    <th>Вантаж </th>
+                    <th>Непередбачені витрати </th>
+                    <th>Витрати в аеропорті </th>
 
 
                 </tr>
                 </thead>
 
                 <tbody>
-                <tr ng-repeat = "item in request2">
-                    <td>{{item.idGroupTourist}}</td>
-                    <td>{{item.firstName}}</td>
-                    <td>{{item.lastName}}</td>
-                    <td>{{item.surName}}</td>
+                <tr ng-repeat = "item in request10">
+                    <td>{{item.idFinanceReport}}</td>
+                    <td>{{item.costHotel}}</td>
+                    <td>{{item.transportation}}</td>
+                    <td>{{item.unforeseenExpenses}}</td>
+                    <td>{{item.settlementsAirport}}</td>
+
+
 
 
                 </tr>
@@ -51,14 +57,14 @@
 
     </div>
     <!—  </div>
-</div><a href="/request3.html">--></a>
+</div><a href="/request15.html">--></a>
 </div>
 </body>
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="requests/request2.js"></script>
+<script type="text/javascript" src="requests/request10.js"></script>
 
 
 

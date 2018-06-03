@@ -1,18 +1,18 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Запит №2</title>
+    <title>Запит №9</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body ng-app = "kursova" style="margin: 15px">
 <div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" ><!--class="container"-->
     <div><a href="/" style="float: left;" ><<<</a></div>
-        <div class="panel-heading"> Списки на розселення  </div>
-        <div  style="font-size: 20px">
-            Готель:
 
-            <select id="hotelName">
+        <div class="panel-heading"> Інформація про туристів вказаного рейсу  </div>
+        <div  style="font-size: 20px">
+            Рейс:
+            <select id="nameJourney">
             </select>
             <a>&ensp;</a><button  class="button-main" style="width: 90px; height: 30px; padding: 0px;font-size: 16px"
                                   ng-click="ctrl.update_request()">
@@ -29,17 +29,24 @@
                     <th>Ім'я </th>
                     <th>Прізвище </th>
                     <th>По-батькові </th>
+                    <th>Готель </th>
+                    <th>Маркування </th>
+
 
 
                 </tr>
                 </thead>
 
                 <tbody>
-                <tr ng-repeat = "item in request2">
-                    <td>{{item.idGroupTourist}}</td>
-                    <td>{{item.firstName}}</td>
-                    <td>{{item.lastName}}</td>
-                    <td>{{item.surName}}</td>
+                <tr ng-repeat = "item in request15">
+                    <td>{{item.groupTourist.idGroupTourist}}</td>
+                    <td>{{item.groupTourist.firstName}}</td>
+                    <td>{{item.groupTourist.lastName}}</td>
+                    <td>{{item.groupTourist.surName}}</td>
+                    <td>{{item.hotel.hotelName}}</td>
+                    <td>{{item.storage.marking}}</td>
+
+
 
 
                 </tr>
@@ -51,14 +58,14 @@
 
     </div>
     <!—  </div>
-</div><a href="/request3.html">--></a>
+</div><a href="/request1.html">--></a>
 </div>
 </body>
 
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="requests/request2.js"></script>
+<script type="text/javascript" src="requests/request15.js"></script>
 
 
 
