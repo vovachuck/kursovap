@@ -13,7 +13,7 @@ App.controller('Airport',function ($http,$scope) {
         var countryDeparture = document.getElementById("countryDeparture").value;
         var countryArrival = document.getElementById("countryArrival").value;
         var numbVacantSeats = document.getElementById("numbVacantSeats").value;
-        var servicePrice = document.getElementById("servicePrice").value;
+
 
 
 
@@ -28,7 +28,7 @@ App.controller('Airport',function ($http,$scope) {
                 countryDeparture: countryDeparture,
                 countryArrival: countryArrival,
                 numbVacantSeats: numbVacantSeats,
-                servicePrice: servicePrice,
+
             }
         };
         //console.log(req);
@@ -44,7 +44,7 @@ App.controller('Airport',function ($http,$scope) {
 
     this.startUpdateAirport = function startUpdate(idAirport,dateArrival,departureDate,
                                                    nameJourney,numbSeats,countryDeparture,countryArrival,
-                                                   numbVacantSeats,servicePrice
+                                                   numbVacantSeats
                                                    ) {
         document.getElementById("idAirportUPD").value = idAirport;
         document.getElementById("dateArrivalUPD").value = dateArrival;
@@ -54,7 +54,7 @@ App.controller('Airport',function ($http,$scope) {
         document.getElementById("countryDepartureUPD").value = countryDeparture;
         document.getElementById("countryArrivalUPD").value = countryArrival;
         document.getElementById("numbVacantSeatsUPD").value = numbVacantSeats;
-        document.getElementById("servicePriceUPD").value = servicePrice;
+
 
     };
 
@@ -67,7 +67,7 @@ App.controller('Airport',function ($http,$scope) {
         var countryDeparture = document.getElementById("countryDepartureUPD").value;
         var countryArrival = document.getElementById("countryArrivalUPD").value;
         var numbVacantSeats = document.getElementById("numbVacantSeatsUPD").value;
-        var servicePrice = document.getElementById("servicePriceUPD").value;
+
 
 
         var req = {
@@ -81,7 +81,7 @@ App.controller('Airport',function ($http,$scope) {
                 countryDeparture: countryDeparture,
                 countryArrival: countryArrival,
                 numbVacantSeats: numbVacantSeats,
-                servicePrice: servicePrice
+
 
 
             }

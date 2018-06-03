@@ -36,8 +36,7 @@ public class Airport {
     @Column(name = "numb_vacant_seats")
     private int numbVacantSeats;
 
-    @Column(name = "service_price")
-    private double servicePrice;
+
 
 
 
@@ -46,7 +45,7 @@ public class Airport {
     }
 
 
-    public Airport(LocalDate dateArrival, LocalDate departureDate, String nameJourney, int numbSeats, String countryDeparture, String countryArrival, int numbVacantSeats, double servicePrice) {
+    public Airport(LocalDate dateArrival, LocalDate departureDate, String nameJourney, int numbSeats, String countryDeparture, String countryArrival, int numbVacantSeats) {
         this.dateArrival = dateArrival;
         this.departureDate = departureDate;
         this.nameJourney = nameJourney;
@@ -54,7 +53,7 @@ public class Airport {
         this.countryDeparture = countryDeparture;
         this.countryArrival = countryArrival;
         this.numbVacantSeats = numbVacantSeats;
-        this.servicePrice = servicePrice;
+
     }
 
     public int getIdAirport() {
@@ -121,11 +120,5 @@ public class Airport {
         this.numbVacantSeats = numbVacantSeats;
     }
 
-    public double getServicePrice() {
-        return servicePrice;
-    }
 
-    public void setServicePrice(double servicePrice) {
-        this.servicePrice = servicePrice;
-    }
 }

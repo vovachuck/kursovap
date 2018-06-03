@@ -1,12 +1,9 @@
 package com.vovaluck.lab5db.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
 @Table(name = "hotel")
@@ -24,17 +21,20 @@ public class Hotel {
     @Column(name = "hotel_name")
     private String hotelName;
 
+    @Column(name = "date_eviction")
+    private LocalDate date_eviction;
     @Column(name = "number_occupied")
-    private LocalDate numberOccupied;
+    private int number_occupied;
 
 
     public Hotel() {
     }
 
-    public Hotel(int numberAvailable, String hotelName, LocalDate numberOccupied) {
+    public Hotel(int numberAvailable, String hotelName, LocalDate date_eviction, int number_occupied) {
         this.numberAvailable = numberAvailable;
         this.hotelName = hotelName;
-        this.numberOccupied = numberOccupied;
+        this.date_eviction = date_eviction;
+        this.number_occupied = number_occupied;
     }
 
     public int getIdHotel() {
@@ -62,12 +62,20 @@ public class Hotel {
     }
 
 
-    public LocalDate getNumberOccupied() {
-        return numberOccupied;
+    public LocalDate getDate_eviction() {
+        return date_eviction;
     }
 
-    public void setNumberOccupied(LocalDate numberOccupied) {
-        this.numberOccupied = numberOccupied;
+    public void setDate_eviction(LocalDate date_eviction) {
+        this.date_eviction = date_eviction;
+    }
+
+    public int getNumber_occupied() {
+        return number_occupied;
+    }
+
+    public void setNumber_occupied(int number_occupied) {
+        this.number_occupied = number_occupied;
     }
 }
   /*

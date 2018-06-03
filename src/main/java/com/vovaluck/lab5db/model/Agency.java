@@ -1,6 +1,7 @@
 package com.vovaluck.lab5db.model;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -36,14 +37,16 @@ public class Agency {
     @JoinColumn(name = "tour_id_tour", insertable = false, updatable = false)
     private Tour tour;
 
-    @Column(name = "tour_id_tour")
+    @Column(name = "tour_id_tour",nullable = true)
+
     private Integer tour_idTour;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "storage_id_storage", insertable = false, updatable = false)
     private Storage storage;
 
-    @Column(name = "storage_id_storage")
+    @Column(name = "storage_id_storage",nullable = true)
+
     private Integer storage_idStorage;
 
     @OneToOne(fetch = FetchType.EAGER)
@@ -69,14 +72,15 @@ public class Agency {
 
     @Column(name = "country_id_country")
     private int country_id_country;
-
+    /*@Transient
+    long COUNT;*/
 
 
     public Agency() {
     }
 
 
-    public Agency(GroupTourist groupTourist, int grouptourist_idGroupTourist, Airport airport, int airport_idAirport, Tour tour, Integer tour_idTour, Storage storage, Integer storage_idStorage, FinanceReport financeReport, int financereport_idFinanceReport, double priceAllTour, Hotel hotel, int hotel_id_hotel, Country country, int country_id_country) {
+    public Agency(GroupTourist groupTourist, int grouptourist_idGroupTourist, Airport airport, int airport_idAirport, Tour tour, Integer tour_idTour, Storage storage, Integer storage_idStorage, FinanceReport financeReport, int financereport_idFinanceReport, double priceAllTour, Hotel hotel, int hotel_id_hotel, Country country, int country_id_country/*,long count*/) {
         this.groupTourist = groupTourist;
         this.grouptourist_idGroupTourist = grouptourist_idGroupTourist;
         this.airport = airport;
@@ -92,6 +96,7 @@ public class Agency {
         this.hotel_id_hotel = hotel_id_hotel;
         this.country = country;
         this.country_id_country = country_id_country;
+        //this.COUNT=count;
     }
 
     public int getIdAgency() {
@@ -221,4 +226,12 @@ public class Agency {
     public void setCountry_id_country(int country_id_country) {
         this.country_id_country = country_id_country;
     }
+
+   /* public long getCOUNT() {
+        return COUNT;
+    }
+
+    public void setCOUNT(long COUNT) {
+        this.COUNT = COUNT;
+    }*/
 }

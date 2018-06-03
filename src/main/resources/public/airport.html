@@ -12,7 +12,7 @@
           integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 </head>
 
-<body ng-app="App">
+<body ng-app="App"><div><a href="/" style="float: left;" ><<<</a></div>
 Airport
 <div ng-controller="Airport as ctrl" id="block">
     <div class="container-fluid">
@@ -28,7 +28,7 @@ Airport
                     <th>Країна вильоту</th>
                     <th>Країна прибуття</th>
                     <th>Кількість вільних місць</th>
-                    <th>Ціна</th>
+
 
 
                     <th width="65px">
@@ -49,12 +49,12 @@ Airport
                     <td scope="row">{{item.countryDeparture}}</td>
                     <td scope="row">{{item.countryArrival}}</td>
                     <td scope="row">{{item.numbVacantSeats}}</td>
-                    <td scope="row">{{item.servicePrice}}</td>
+
 
 
                     <td scope="row">
                         <button type="button" class="btn-warning" data-toggle="modal" data-target="#updateModal"
-                                ng-click="ctrl.startUpdateAirport(item.idAirport,item.dateArrival,item.departureDate,item.nameJourney,item.numbSeats,item.countryDeparture,item.countryArrival,item.numbVacantSeats,item.servicePrice)"
+                                ng-click="ctrl.startUpdateAirport(item.idAirport,item.dateArrival,item.departureDate,item.nameJourney,item.numbSeats,item.countryDeparture,item.countryArrival,item.numbVacantSeats)"
                                 style="width: 30px">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
@@ -108,10 +108,7 @@ Airport
                         Кількість вільних місць
                         <br>
                         <input type="number" id="numbVacantSeats">
-                        <br>
-                        Ціна
-                        <br>
-                        <input type="number" id="servicePrice">
+
 
                     </div>
                     <div class="modal-footer">
@@ -166,10 +163,7 @@ Airport
                         Кількість вільних місць
                         <br>
                         <input type="number" id="numbVacantSeatsUPD">
-                        <br>
-                        Ціна
-                        <br>
-                        <input type="number" id="servicePriceUPD">
+
 
                     </div>
                     <div class="modal-footer">

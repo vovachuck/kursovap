@@ -12,7 +12,7 @@
           integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 </head>
 
-<body ng-app="App">
+<body ng-app="App"><div><a href="/" style="float: left;" ><<<</a></div>
 Hotel
 <div ng-controller="Hotel as ctrl" id="block">
     <div class="container-fluid">
@@ -24,6 +24,7 @@ Hotel
                     <th>Кількість вільних номерів</th>
                     <th>Назва готелю</th>
                     <th>Дата заселення</th>
+                    <th>Кількість зайнятих номерів</th>
 
                     <th width="65px">
                         <button type="button" class="btn-success" data-toggle="modal" data-target="#addModal"
@@ -38,11 +39,12 @@ Hotel
                     <td scope="row">{{item.idHotel}}</td>
                     <td scope="row">{{item.numberAvailable}}</td>
                     <td scope="row">{{item.hotelName}}</td>
-                    <td scope="row">{{item.numberOccupied}}</td>
+                    <td scope="row">{{item.date_eviction}}</td>
+                    <td scope="row">{{item.number_occupied}}</td>
 
                     <td scope="row">
                         <button type="button" class="btn-warning" data-toggle="modal" data-target="#updateModal"
-                                ng-click="ctrl.startUpdateBuilding(item.idHotel,item.numberAvailable,item.hotelName,item.numberOccupied)"
+                                ng-click="ctrl.startUpdateBuilding(item.idHotel,item.numberAvailable,item.hotelName,item.date_eviction,item.number_occupied)"
                                 style="width: 30px">
                             <i class="fas fa-pencil-alt"></i>
                         </button>
@@ -79,7 +81,11 @@ Hotel
                         <br>
                         Дата заселення
                         <br>
-                        <input type="date" id="numberOccupied">
+                        <input type="date" id="date_eviction">
+                        <br>
+                        Кількість зайнятих номерів
+                        <br>
+                        <input type="number" id="number_occupied">
 
                     </div>
                     <div class="modal-footer">
@@ -115,9 +121,13 @@ Hotel
                         <br>
                         <input type="text" id="hotelNameUPD">
                         <br>
-                        Дату заселення
+                        Дата заселення
                         <br>
-                        <input type="date" id="numberOccupiedUPD">
+                        <input type="date" id="date_evictionUPD">
+                        <br>
+                        Кількість зайнятих номерів
+                        <br>
+                        <input type="number" id="number_occupiedUPD">
 
                     </div>
                     <div class="modal-footer">

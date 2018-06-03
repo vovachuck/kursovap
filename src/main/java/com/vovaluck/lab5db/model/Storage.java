@@ -11,8 +11,8 @@ import java.time.LocalDate;
 public class Storage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idStorage")
-    private int idStorage;
+    @Column(name = "idStorage",nullable = true)
+    private Integer idStorage;
 
     //@Column(nullable = false)
     @Column(name = "marking")

@@ -4,49 +4,127 @@
     <meta charset="utf-8">
     <title>Лакуста Володимир</title>
     <style>
-        #navbar {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            border: 2px solid #0066FF;
-            border-radius: 20px 5px;
-            width: 1500px;
-            text-align: center;
+        @media (max-width: 930px) {
+            .content-wrapper {padding: 0;}
+        }
 
-            background-color: #33ADFF;
+        @media (max-width: 930px) and (min-width: 470px) {
+            aside {position: static; width: 100%; background: #ccc;}
         }
-        #navbar li { display: inline; }
-        #navbar a {
-            color: #fff;
-            padding: 5px 10px;
-            text-decoration: none;
-            font-weight: bold;
+
+        @media (max-width: 469px) {
+            body {font: .9em/1em "Helvetica Neue",Arial,Helvetica,sans-serif;}
+            aside {display: none;}
+        }
+
+        body{
+            background: #c4c7cb;
+            background-image: -webkit-radial-gradient(cover, #FFF,#D1D1D1	);
+            background-image: -moz-radial-gradient(cover, #e8eaec, #a4a8ae);
+            background-image: -o-radial-gradient(cover, #e8eaec, #a4a8ae);
+            background-image: radial-gradient(cover, #e8eaec, #a4a8ae)
+
+        }
+
+
+        html{
+            min-height:100%;
+        }
+
+        .Navigation{
+            height: 50px;
+            padding: 0;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .Navigation li 	{
+            height: auto;
+            width: 130px;
+            float: left;
             text-align: center;
-            display: inline-block;
-            width: 140px;
+            list-style: none;
+            font:13px "Bonveno", "Century Gothic";
+            padding: 0;
+            margin: 0;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            box-shadow: 0 1px 0 rgba(255,255,255, .9) inset, 0 1px 3px rgba(0,0,0, .1);
+            border-radius: 3px;
+            margin-left:10px;
+
         }
-        #navbar a:hover {
-            border-radius: 20px 5px;
-            background-color: #0066FF;
+
+        .Navigation a{
+            padding:13px;
+            text-decoration: none;
+            color:#333;
+            text-shadow: 0 1px #fff;
+            display: block;
         }
+        .Navigation li ul{
+            display: none;
+            height: auto;
+            margin-left: -11px;
+            padding: 0;
+            position: absolute;
+        }
+
+        .Navigation li:hover ul{
+            display: block;
+        }
+
+        .navbar li ul li {
+            background-color:#eee;
+            border: 1px solid #ccc;
+        }
+
+        .Navigation li:hover, a:hover {
+            background: #e8e8e8;
+        }
+
     </style>
 </head>
 <header>
-    <ul id="navbar">
-        <li><a href="/groupTourist.html" target="_self">Група туристів</a></li>
-        <li><a href="/agency.html">Представництво</a></li>
-        <li><a href="/country.html">Країна</a></li>
-        <li><a href="/customs.html">Відділ еміграції</a></li>
-        <li><a href="/airport.html">Аеропорт</a></li>
-        <li><a href="/hotel.html">Готель</a></li>
-        <li><a href="/tour.html">Екскурсія</a></li>
-        <li><a href="/storage.html">Склад</a></li>
-        <li><a href="/financeReport.html">Фінансовий звіт</a></li>
+    <div id="Navigation">
+        <ul class="Navigation">
+            <ul id="navbar">
+                <li><a href="/groupTourist.html" target="_self">Група туристів</a></li>
+                <li><a href="/agency.html">Представництво</a></li>
+                <li><a href="/country.html">Країна</a></li>
+                <li><a href="/customs.html">Відділ еміграції</a></li>
+                <li><a href="/airport.html">Аеропорт</a></li>
+                <li><a href="/hotel.html">Готель</a></li>
+                <li><a href="/tour.html">Екскурсія</a></li>
+                <li><a href="/storage.html">Склад</a></li>
+                <li><a href="/financeReport.html">Фінансовий звіт</a></li>
+                <li><a disabled>Запити</a>
+                    <ul>
+                        <li><a href="/request1.html">Запит №1</a></li>
+                        <li><a href="/request2.html">Запит №2</a></li>
+                        <li><a href="/request3.html">Запит №3</a></li>
+                        <li><a href="/request3_1.html">Запит №4</a></li>
+                        <li><a href="/request4.html">Запит №5</a></li>
+                        <li><a href="/request5.html">Запит №6</a></li>
+                        <li><a href="/request6.html">Запит №7</a></li>
+                        <li><a href="/request9.html">Запит №8</a></li>
+                        <li><a href="/request10.html">Запит №9</a></li>
+                        <li><a href="/request15.html">Запит №10</a></li>
 
-    </ul>
+
+
+                    </ul>
+
+                </li>
+
+            </ul>
+        </ul>
+
+    </div>
 </header>
 <body>
-<h4 style="text-align: center; font-weight: bold; font-size: 14px;">
+
+<h4 style="text-align: center; font-weight: bold; font-size: 14px;margin-top: 4.5%;">
     Міністерство освіти і науки України<br>
     Чернівецький національний університет імені Юрія Федьковича<br>
 </h4>

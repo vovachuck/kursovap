@@ -11,20 +11,20 @@ import java.time.LocalDate;
 public class FinanceReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idFinanceReport")
+    @Column(name = "id_finance_report")
     private int idFinanceReport;
 
     //@Column(nullable = false)
-    @Column(name = "costHotel")
+    @Column(name = "cost_hotel")
     private double costHotel;
 
     @Column(name = "transportation")
     private double transportation;
 
-    @Column(name = "unforeseenExpenses")
+    @Column(name = "unforeseen_expenses")
     private double unforeseenExpenses;
 
-    @Column(name = "settlementsAirport")
+    @Column(name = "settlements_airport")
     private double settlementsAirport;
 
     public FinanceReport() {

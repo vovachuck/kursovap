@@ -11,8 +11,8 @@ import java.time.LocalDate;
 public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTour")
-    private int idTour;
+    @Column(name = "idTour",nullable = true)
+    private Integer idTour;
 
     //@Column(nullable = false)
     @Column(name = "nameTour")

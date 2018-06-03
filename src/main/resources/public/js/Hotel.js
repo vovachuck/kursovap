@@ -8,7 +8,8 @@ App.controller('Hotel',function ($http,$scope) {
     this.insertToBuilding = function add() {
         var numb = document.getElementById("numberAvailable").value;
         var nameH = document.getElementById("hotelName").value;
-        var total = document.getElementById("numberOccupied").value;
+        var total = document.getElementById("date_eviction").value;
+        var total1 = document.getElementById("number_occupied").value;
 
 
         var req = {
@@ -17,7 +18,8 @@ App.controller('Hotel',function ($http,$scope) {
             data: {
                 numberAvailable: numb,
                 hotelName: nameH,
-                numberOccupied: total
+                date_eviction: total,
+                number_occupied: total1
             }
         };
         //console.log(req);
@@ -32,11 +34,12 @@ App.controller('Hotel',function ($http,$scope) {
     };
 
     this.startUpdateBuilding = function startUpdate(idHotel,numberAvailable,hotelName,
-                                                    numberOccupied) {
+                                                    date_eviction,number_occupied) {
         document.getElementById("idHotelUPD").value = idHotel;
         document.getElementById("numberAvailableUPD").value = numberAvailable;
         document.getElementById("hotelNameUPD").value = hotelName;
-        document.getElementById("numberOccupiedUPD").value = numberOccupied;
+        document.getElementById("date_evictionUPD").value = date_eviction;
+        document.getElementById("number_occupiedUPD").value = number_occupied;
 
     };
 
@@ -44,7 +47,8 @@ App.controller('Hotel',function ($http,$scope) {
         var id = document.getElementById("idHotelUPD").value;
         var numb = document.getElementById("numberAvailableUPD").value;
         var nameH = document.getElementById("hotelNameUPD").value;
-        var total = document.getElementById("numberOccupiedUPD").value;
+        var total = document.getElementById("date_evictionUPD").value;
+        var total1 = document.getElementById("number_occupiedUPD").value;
 
         var req = {
             method: 'POST',
@@ -52,7 +56,8 @@ App.controller('Hotel',function ($http,$scope) {
             data: {
                 numberAvailable: numb,
                 hotelName: nameH,
-                numberOccupied: total
+                date_eviction: total,
+                number_occupied: total1
 
             }
         };
