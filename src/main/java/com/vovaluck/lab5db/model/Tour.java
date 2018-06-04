@@ -11,17 +11,17 @@ import java.time.LocalDate;
 public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTour",nullable = true)
+    @Column(name = "id_tour")
     private Integer idTour;
 
     //@Column(nullable = false)
-    @Column(name = "nameTour",nullable = true)
+    @Column(name = "name_tour",nullable = true)
     private String nameTour;
 
-    @Column(name = "dateStartTour",nullable = true)
+    @Column(name = "date_start_tour",nullable = true)
     private LocalDate dateStartTour;
 
-    @Column(name = "dateEndTour",nullable = true)
+    @Column(name = "date_end_tour",nullable = true)
     private LocalDate dateEndTour;
 
     @Column(name = "agency",nullable = true)
@@ -46,7 +46,7 @@ public class Tour {
         this.priceTour = priceTour;
     }
 
-    public int getIdTour() {
+    public Integer getIdTour() {
         return idTour;
     }
 

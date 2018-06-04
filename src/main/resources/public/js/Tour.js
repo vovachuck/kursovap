@@ -12,7 +12,6 @@ App.controller('Tour',function ($http,$scope) {
         var agency = document.getElementById("agency").value;
         var priceTour = document.getElementById("priceTour").value;
 
-
         var req = {
             method: 'POST',
             url: '/tour/insert',
@@ -21,7 +20,7 @@ App.controller('Tour',function ($http,$scope) {
                 dateStartTour: dateStartTour,
                 dateEndTour: dateEndTour,
                 agency: agency,
-                priceTour: priceTour,
+                priceTour: priceTour
             }
         };
         //console.log(req);

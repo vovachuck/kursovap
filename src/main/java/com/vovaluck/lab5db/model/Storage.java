@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class Storage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idStorage",nullable = true)
+    @Column(name = "id_storage")
     private Integer idStorage;
 
     //@Column(nullable = false)
@@ -21,22 +21,22 @@ public class Storage {
     @Column(name = "weight")
     private double weight;
 
-    @Column(name = "datePack")
+    @Column(name = "date_pack")
     private LocalDate datePack;
 
-    @Column(name = "airplaneClass")
+    @Column(name = "airplane_class")
     private String airplaneClass;
 
-    @Column(name = "numbPlacesCargo")
+    @Column(name = "numb_places_cargo")
     private int numbPlacesCargo;
 
-    @Column(name = "departureDateCargo")
+    @Column(name = "departure_date_cargo")
     private LocalDate departureDateCargo;
 
-    @Column(name = "arrivalDateCargo")
+    @Column(name = "arrival_date_cargo")
     private LocalDate arrivalDateCargo;
 
-    @Column(name = "priceStoreCargo")
+    @Column(name = "price_store_cargo")
     private double priceStoreCargo;
 
 
@@ -58,7 +58,7 @@ public class Storage {
         this.priceStoreCargo = priceStoreCargo;
     }
 
-    public int getIdStorage() {
+    public Integer getIdStorage() {
         return idStorage;
     }
 

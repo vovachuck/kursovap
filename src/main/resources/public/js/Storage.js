@@ -27,7 +27,7 @@ App.controller('Storage',function ($http,$scope) {
                 numbPlacesCargo: numbPlacesCargo,
                 departureDateCargo: departureDateCargo,
                 arrivalDateCargo: arrivalDateCargo,
-                priceStoreCargo: priceStoreCargo,
+                priceStoreCargo: priceStoreCargo
             }
         };
         //console.log(req);
