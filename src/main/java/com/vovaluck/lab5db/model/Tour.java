@@ -15,19 +15,19 @@ public class Tour {
     private Integer idTour;
 
     //@Column(nullable = false)
-    @Column(name = "nameTour")
+    @Column(name = "nameTour",nullable = true)
     private String nameTour;
 
-    @Column(name = "dateStartTour")
+    @Column(name = "dateStartTour",nullable = true)
     private LocalDate dateStartTour;
 
-    @Column(name = "dateEndTour")
+    @Column(name = "dateEndTour",nullable = true)
     private LocalDate dateEndTour;
 
-    @Column(name = "agency")
+    @Column(name = "agency",nullable = true)
     private String agency;
 
-    @Column(name = "pricetour")
+    @Column(name = "pricetour",nullable = true)
     private double priceTour;
 
 
