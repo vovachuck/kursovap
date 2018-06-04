@@ -12,7 +12,7 @@ public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_tour")
-    private Integer idTour;
+    private int idTour;
 
     //@Column(nullable = false)
     @Column(name = "name_tour",nullable = true)
@@ -46,7 +46,7 @@ public class Tour {
         this.priceTour = priceTour;
     }
 
-    public Integer getIdTour() {
+    public int getIdTour() {
         return idTour;
     }
 

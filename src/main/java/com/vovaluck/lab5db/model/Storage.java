@@ -12,7 +12,7 @@ public class Storage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_storage")
-    private Integer idStorage;
+    private int idStorage;
 
     //@Column(nullable = false)
     @Column(name = "marking")
@@ -58,7 +58,7 @@ public class Storage {
         this.priceStoreCargo = priceStoreCargo;
     }
 
-    public Integer getIdStorage() {
+    public int getIdStorage() {
         return idStorage;
     }
 

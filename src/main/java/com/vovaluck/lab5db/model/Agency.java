@@ -39,7 +39,7 @@ public class Agency {
 
     @Column(name = "tour_id_tour",nullable = true)
 
-    private Integer tour_idTour;
+    private int tour_idTour;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "storage_id_storage", insertable = false, updatable = false)
@@ -47,7 +47,7 @@ public class Agency {
 
     @Column(name = "storage_id_storage",nullable = true)
 
-    private Integer storage_idStorage;
+    private int storage_idStorage;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "financereport_id_finance_report", insertable = false, updatable = false)
