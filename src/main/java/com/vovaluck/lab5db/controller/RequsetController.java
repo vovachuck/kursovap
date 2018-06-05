@@ -60,14 +60,7 @@ public class RequsetController {
     List<FinanceReport> selectSomethingFinance(@RequestParam String nameGroup, @RequestParam String category){
         return  requestService.selectSomethingFinance(nameGroup,category);
     }
-    @RequestMapping("/request11")
-    List<Agency> selectSomethingAgencyFinance(@RequestParam(value = "date1", required = true)
-                                       @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date1,
-                                       @RequestParam(value = "date2", required = true)
-                                       @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date2){
 
-        return  requestService.selectSomethingAgencyFinance(date1,date2);
-    }
   /*  @RequestMapping("/request7")
     List<Agency> selectSomethingAgencyTour(){
         return  requestService.selectSomethingAgencyTour();
@@ -87,4 +80,18 @@ public class RequsetController {
                                      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date2){
         return  requestService.selectSomethingList(date1,date2);
     }
+    @RequestMapping("/request17")
+    List<AmountAgency> selectAmountAgency(){
+        return  requestService.selectAmountAgency();
+    }
+    @RequestMapping("/request18")
+    List<GroupTourist> selectTourist(@RequestParam String nameGroup){
+        return  requestService.selectTourist(nameGroup);
+    }
+    @RequestMapping("/request19")
+    List<AmountAgency> selectAmountAgencyHotel(){
+        return  requestService.selectAmountAgencyHotel();
+    }
+
+
 }

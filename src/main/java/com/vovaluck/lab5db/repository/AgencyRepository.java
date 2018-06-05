@@ -20,7 +20,7 @@ public interface AgencyRepository extends JpaRepository<Agency,Integer> {
     List<Agency> selectSomethingAgency(@Param("date1") LocalDate date1, @Param("date2") LocalDate date2);
 
 
-    @Query("Select sum(finance.costHotel),sum(finance.transportation), " +
+    /*@Query("Select sum(finance.costHotel),sum(finance.transportation), " +
             "sum(finance.unforeseenExpenses),sum(finance.settlementsAirport), " +
             "sum(tour.priceTour),sum(customs.priceVIsa),sum(storage.priceStoreCargo), " +
             "sum(agency.priceAllTour) " +
@@ -32,7 +32,7 @@ public interface AgencyRepository extends JpaRepository<Agency,Integer> {
             "join Storage storage on storage.idStorage=agency.storage_idStorage "+
             "join Tour tour on tour.idTour=agency.tour_idTour "+
             "where airport.dateArrival between  :date1 and :date2")
-    List<Agency> selectSomethingAgencyFinance(@Param("date1") LocalDate date1, @Param("date2") LocalDate date2);
+    List<Agency> selectSomethingAgencyFinance(@Param("date1") LocalDate date1, @Param("date2") LocalDate date2);*/
 
     /*@Query("Select DISTINCT NEW Agency(agency.idAgency, agency.grouptourist_idGroupTourist, agency.airport_idAirport, " +
             "agency.tour_idTour,agency.storage_idStorage,agency.financereport_idFinanceReport,agency.priceAllTour " +
@@ -61,6 +61,25 @@ public interface AgencyRepository extends JpaRepository<Agency,Integer> {
             "join GroupTourist groupTourist on groupTourist.idGroupTourist=agency.grouptourist_idGroupTourist "+
             "where tour.dateStartTour between  :date1 and :date2")
     List<Agency> selectSomethingList(@Param("date1") LocalDate date1, @Param("date2") LocalDate date2);
+    @Query("select count(agency.airport_idAirport) from Agency agency " +
+            " inner join Airport airport on airport.idAirport=agency.airport_idAirport " +
+            " group by airport.nameJourney order by agency.airport_idAirport")
+    List<Long>selectAmount();
+    @Query("select agency from Agency agency inner join Airport airport on airport.idAirport=agency.airport_idAirport " +
+            "group by airport.nameJourney order by agency.airport_idAirport")
+    List<Agency> selectAgency();
+
+    @Query("select count(agency.hotel_id_hotel) from Agency agency " +
+            " inner join Hotel hotel on hotel.idHotel=agency.hotel_id_hotel " +
+            " group by hotel.hotelName order by agency.hotel_id_hotel")
+    List<Long>selectAmountHotel();
+    @Query("select agency from Agency agency " +
+            " inner join Hotel hotel on hotel.idHotel=agency.hotel_id_hotel " +
+            " group by hotel.hotelName order by agency.hotel_id_hotel")
+    List<Agency> selectAgencyHotel();
+
+
+
 
 
 }

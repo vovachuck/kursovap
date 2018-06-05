@@ -38,7 +38,9 @@ public interface GroupTouristRepository extends JpaRepository<GroupTourist,Integ
             "where airport.countryArrival Like :countryArrival and airport.dateArrival between  :date1 and :date2")
     List<GroupTourist> selectSomethingCountryAll(@Param("countryArrival") String countryArrival,@Param("date1") LocalDate date1, @Param("date2") LocalDate date2);
 
-
+    @Query("Select grouptourist From GroupTourist grouptourist " +
+            "where grouptourist.nameGroup Like :nameGroup")
+    List<GroupTourist>selectTourist(@Param("nameGroup")String nameGroup);
 
 
 }

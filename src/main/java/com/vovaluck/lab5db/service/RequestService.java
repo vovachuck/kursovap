@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -73,9 +74,38 @@ public class RequestService implements IRequest {
      public List<Agency> selectSomethingAgencyTour() {
          return agencyRepository.selectSomethingAgencyTour();
      }*/
-    @Override
+    /*@Override
     public List<Agency> selectSomethingAgencyFinance(LocalDate date1, LocalDate date2) {
         return agencyRepository.selectSomethingAgencyFinance(date1,date2);
+    }*/
+    public List<AmountAgency> selectAmountAgency(){
+        List<Agency> agencies=agencyRepository.selectAgency();
+        List<Long> amount=agencyRepository.selectAmount();
+        List<AmountAgency> list=new ArrayList<>();
+        for (int i = 0; i < amount.size(); i++) {
+            list.add(new AmountAgency(amount.get(i),agencies.get(i)));
+
+
+        }
+        return  list;
     }
+
+    @Override
+    public List<GroupTourist> selectTourist(String nameGroup) {
+        return groupTouristRepository.selectTourist(nameGroup);
+    }
+    public List<AmountAgency> selectAmountAgencyHotel(){
+        List<Agency> agencies=agencyRepository.selectAgencyHotel();
+        List<Long> amount=agencyRepository.selectAmountHotel();
+        List<AmountAgency> list=new ArrayList<>();
+        for (int i = 0; i < amount.size(); i++) {
+            list.add(new AmountAgency(amount.get(i),agencies.get(i)));
+
+
+        }
+        return  list;
+    }
+
+
 
 }
