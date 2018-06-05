@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Запит №11</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body ng-app = "kursova" style="margin: 15px">
+<div  style="margin-top: 30px" ng-controller = "AppCtrl as ctrl" ><!--class="container"-->
+    <!--<div class="row">
+        <div class="col-md12">-->
+
+    <div class="panel-heading"> Рейси за популярністю  </div>
+
+    <div class="datagrid">
+
+        <table ><!--class="table table-striped"-->
+            <thead>
+            <tr>
+                <th width="40px">Кількість </th>
+                <th>Назва рейсу </th>
+
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr ng-repeat = "item in request11">
+                <td>{{item.count}}</td>
+                <td>{{item.airport.nameJourney}}</td>
+
+
+
+            </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+
+</div>
+<!--  </div>
+</div>--><a href="/request18.html">--></a>
+</div>
+</body>
+
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="requests/request11.js"></script>
+
+
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+</html>
