@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Запит №12</title>
+    <title>Запит №17</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -12,9 +12,9 @@
     <!--<div class="row">
         <div class="col-md12">-->
     <div><a href="/" style="float: left;" ><<<</a></div>
-    <div class="panel-heading"> Список туристів за групою  </div>
+    <div class="panel-heading"> Витрати туристів групи  </div>
     <div  style="font-size: 20px">
-        Назва групи:
+        Група:
         <select id="nameGroup">
         </select>
         <a>&ensp;</a><button  class="button-main" style="width: 90px; height: 30px; padding: 0px;font-size: 16px"
@@ -32,17 +32,26 @@
                 <th>Ім'я </th>
                 <th>Прізвище </th>
                 <th>По-батькові </th>
+                <th>Готель </th>
+                <th>Перевезення </th>
+                <th>Непередбачені витрати </th>
+                <th>Витрати в аеропорту </th>
+
 
 
             </tr>
             </thead>
 
             <tbody>
-            <tr ng-repeat = "item in request18">
-                <td>{{item.idGroupTourist}}</td>
-                <td>{{item.firstName}}</td>
-                <td>{{item.lastName}}</td>
-                <td>{{item.surName}}</td>
+            <tr ng-repeat = "item in request25">
+                <td>{{item.groupTourist.idGroupTourist}}</td>
+                <td>{{item.groupTourist.firstName}}</td>
+                <td>{{item.groupTourist.lastName}}</td>
+                <td>{{item.groupTourist.surName}}</td>
+                <td>{{item.financeReport.costHotel}}</td>
+                <td>{{item.financeReport.transportation}}</td>
+                <td>{{item.financeReport.unforeseenExpenses}}</td>
+                <td>{{item.financeReport.settlementsAirport}}</td>
 
 
 
@@ -57,7 +66,7 @@
 <!—  </div>
 
 </div>
-<a href="/request20.html">--></a>
+<a href="/request1.html">--></a>
 
 </div>
 </body>
@@ -65,7 +74,7 @@
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="requests/request18.js"></script>
+<script type="text/javascript" src="requests/request25.js"></script>
 
 
 

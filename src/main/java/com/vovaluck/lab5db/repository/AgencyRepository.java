@@ -91,7 +91,24 @@ public interface AgencyRepository extends JpaRepository<Agency,Integer> {
             "group by airport.nameJourney order by agency.airport_idAirport")
     List<Agency>selectAmountAir();
 
-    //count(agency.hotel_id_hotel)
+    @Query("select agency from Agency agency " +
+            "join Tour tour on tour.idTour=agency.tour_idTour " +
+            "where tour.nameTour Like :nameTour ")
+    List<Agency>selectTourTourist(@Param("nameTour") String nameTour);
+
+    @Query("select agency from Agency agency " +
+            "join Country country on country.idCountry=agency.country_id_country " +
+            "join Customs customs on customs.idCustoms=country.customs_idCustoms " +
+            "join GroupTourist groupTourist on groupTourist.idGroupTourist=agency.grouptourist_idGroupTourist " +
+            "where :date1 between  customs.dateStart and customs.dateEnd")
+    List<Agency>selectVisa(@Param("date1") LocalDate date1);
+
+    @Query("Select agency From Agency agency " +
+            "join FinanceReport finance on finance.idFinanceReport=agency.financereport_idFinanceReport " +
+            "join GroupTourist groupTourist on groupTourist.idGroupTourist=agency.grouptourist_idGroupTourist "+
+            "where groupTourist.nameGroup Like :nameGroup")
+    List<Agency> selectSomethingInfoTourist(@Param("nameGroup") String nameGroup);
+
 
 
 }

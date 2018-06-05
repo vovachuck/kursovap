@@ -42,5 +42,10 @@ public interface GroupTouristRepository extends JpaRepository<GroupTourist,Integ
             "where grouptourist.nameGroup Like :nameGroup")
     List<GroupTourist>selectTourist(@Param("nameGroup")String nameGroup);
 
+    @Query("Select grouptourist From GroupTourist grouptourist " +
+            "where grouptourist.category Like :category")
+    List<GroupTourist>selectTouristCategory(@Param("category")String category);
+
+
 
 }

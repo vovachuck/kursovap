@@ -97,5 +97,33 @@ public class RequsetController {
     List<Agency> selectAmountAir(){
         return  requestService.selectAmountAir();
     }
-
+    @RequestMapping("/request20")
+    List<Agency> selectTourTourist(@RequestParam String nameTour){
+        return  requestService.selectTourTourist(nameTour);
+    }
+    @RequestMapping("/request21")
+    List<Agency> selectVisa(@RequestParam(value = "date1", required = true)
+                            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date1
+                            ){
+        return  requestService.selectVisa(date1);
+    }
+    @RequestMapping("/request22")
+    List<Airport> selectVisa(@RequestParam String nameJourney)
+    {
+        return  requestService.selectAir(nameJourney);
+    }
+    @RequestMapping("/request23")
+    List<Airport> selectAirJour(@RequestParam(value = "date1", required = true)
+                             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date1)
+    {
+        return  requestService.selectAirJour(date1);
+    }
+    @RequestMapping("/request24")
+    List<GroupTourist> selectTouristCategory(@RequestParam String category){
+        return  requestService.selectTouristCategory(category);
+    }
+    @RequestMapping("/request25")
+    List<Agency> selectSomethingInfoTourist(@RequestParam String nameGroup){
+        return  requestService.selectSomethingInfoTourist(nameGroup);
+    }
 }

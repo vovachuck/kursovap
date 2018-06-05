@@ -19,6 +19,8 @@ public class RequestService implements IRequest {
     StorageRepository storageRepository;
     @Autowired
     FinanceReportRepository financeReportRepository;
+    @Autowired
+    AirportRepository airportRepository;
     @Override
     public List<GroupTourist> selectSomething(String nameCountry){
         return groupTouristRepository.selectSomething(nameCountry);
@@ -109,6 +111,36 @@ public class RequestService implements IRequest {
     @Override
     public List<Agency> selectAmountAir() {
         return agencyRepository.selectAmountAir();
+    }
+
+    @Override
+    public List<Agency> selectTourTourist(String nameTour) {
+        return agencyRepository.selectTourTourist(nameTour);
+    }
+
+    @Override
+    public List<Agency> selectVisa(LocalDate date1) {
+        return agencyRepository.selectVisa(date1);
+    }
+
+    @Override
+    public List<Airport> selectAir(String nameJourney) {
+        return airportRepository.selectAir(nameJourney);
+    }
+
+    @Override
+    public List<Airport> selectAirJour(LocalDate date1) {
+        return airportRepository.selectAirJour(date1);
+    }
+
+    @Override
+    public List<GroupTourist> selectTouristCategory(String category) {
+        return groupTouristRepository.selectTouristCategory(category);
+    }
+
+    @Override
+    public List<Agency> selectSomethingInfoTourist(String nameGroup) {
+        return agencyRepository.selectSomethingInfoTourist(nameGroup);
     }
 
 

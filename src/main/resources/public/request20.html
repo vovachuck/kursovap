@@ -12,10 +12,10 @@
     <!--<div class="row">
         <div class="col-md12">-->
     <div><a href="/" style="float: left;" ><<<</a></div>
-    <div class="panel-heading"> Список туристів за групою  </div>
+    <div class="panel-heading"> Список туристів для екскурсії  </div>
     <div  style="font-size: 20px">
-        Назва групи:
-        <select id="nameGroup">
+        Назва екскурсії:
+        <select id="nameTour">
         </select>
         <a>&ensp;</a><button  class="button-main" style="width: 90px; height: 30px; padding: 0px;font-size: 16px"
                               ng-click="ctrl.update_request()">
@@ -38,11 +38,11 @@
             </thead>
 
             <tbody>
-            <tr ng-repeat = "item in request18">
-                <td>{{item.idGroupTourist}}</td>
-                <td>{{item.firstName}}</td>
-                <td>{{item.lastName}}</td>
-                <td>{{item.surName}}</td>
+            <tr ng-repeat = "item in request20">
+                <td>{{item.groupTourist.idGroupTourist}}</td>
+                <td>{{item.groupTourist.firstName}}</td>
+                <td>{{item.groupTourist.lastName}}</td>
+                <td>{{item.groupTourist.surName}}</td>
 
 
 
@@ -57,7 +57,7 @@
 <!—  </div>
 
 </div>
-<a href="/request20.html">--></a>
+<a href="/request21.html">--></a>
 
 </div>
 </body>
@@ -65,7 +65,7 @@
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 
 <script type="text/javascript" src="js/angular.min.js"></script>
-<script type="text/javascript" src="requests/request18.js"></script>
+<script type="text/javascript" src="requests/request20.js"></script>
 
 
 

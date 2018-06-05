@@ -23,6 +23,12 @@ public interface IRequest {
     List<GroupTourist> selectTourist(String nameGroup);
     List<AmountAgency> selectAmountAgencyHotel();
     List<Agency> selectAmountAir();
+    List<Agency>selectTourTourist(String nameTour);
+    List<Agency>selectVisa(LocalDate date1);
+    List<Airport>selectAir(String nameJourney);
+    List<Airport>selectAirJour(LocalDate date1);
+    List<GroupTourist>selectTouristCategory(String category);
+    List<Agency> selectSomethingInfoTourist(String nameGroup);
 
 
 }

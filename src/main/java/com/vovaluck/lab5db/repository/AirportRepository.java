@@ -12,6 +12,12 @@ import java.util.List;
 
 @Repository
 public interface AirportRepository extends JpaRepository<Airport,Integer> {
+    @Query("select airport from Airport airport " +
+            "where airport.nameJourney Like :nameJourney ")
+    List<Airport>selectAir(@Param("nameJourney") String nameJourney);
 
+    @Query("select airport from Airport airport " +
+            "where :date1 between  airport.departureDate and airport.dateArrival ")
+    List<Airport>selectAirJour(@Param("date1") LocalDate date1);
 
 }
