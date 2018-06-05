@@ -22,7 +22,7 @@ public interface IRequest {
     List<AmountAgency> selectAmountAgency ();
     List<GroupTourist> selectTourist(String nameGroup);
     List<AmountAgency> selectAmountAgencyHotel();
-
+    List<Agency> selectAmountAir();
 
 
 }

@@ -72,15 +72,15 @@ public class Agency {
 
     @Column(name = "country_id_country")
     private int country_id_country;
-    /*@Transient
-    long COUNT;*/
+    @Transient
+    long count;
 
 
     public Agency() {
     }
 
 
-    public Agency(GroupTourist groupTourist, int grouptourist_idGroupTourist, Airport airport, int airport_idAirport, Tour tour, Integer tour_idTour, Storage storage, Integer storage_idStorage, FinanceReport financeReport, int financereport_idFinanceReport, double priceAllTour, Hotel hotel, int hotel_id_hotel, Country country, int country_id_country/*,long count*/) {
+    public Agency(GroupTourist groupTourist, int grouptourist_idGroupTourist, Airport airport, int airport_idAirport, Tour tour, Integer tour_idTour, Storage storage, Integer storage_idStorage, FinanceReport financeReport, int financereport_idFinanceReport, double priceAllTour, Hotel hotel, int hotel_id_hotel, Country country, int country_id_country, long count) {
         this.groupTourist = groupTourist;
         this.grouptourist_idGroupTourist = grouptourist_idGroupTourist;
         this.airport = airport;
@@ -96,8 +96,10 @@ public class Agency {
         this.hotel_id_hotel = hotel_id_hotel;
         this.country = country;
         this.country_id_country = country_id_country;
-        //this.COUNT=count;
+        this.count=count;
     }
+
+
 
     public int getIdAgency() {
         return idAgency;
@@ -227,11 +229,12 @@ public class Agency {
         this.country_id_country = country_id_country;
     }
 
-   /* public long getCOUNT() {
-        return COUNT;
+
+    public long getCount() {
+        return count;
     }
 
-    public void setCOUNT(long COUNT) {
-        this.COUNT = COUNT;
-    }*/
+    public void setCount(long count) {
+        this.count = count;
+    }
 }

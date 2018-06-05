@@ -78,8 +78,20 @@ public interface AgencyRepository extends JpaRepository<Agency,Integer> {
             " group by hotel.hotelName order by agency.hotel_id_hotel")
     List<Agency> selectAgencyHotel();
 
+    @Query("select DISTINCT New Agency(groupTourist,agency.grouptourist_idGroupTourist,airport,agency.airport_idAirport,tour,agency.tour_idTour," +
+            "storage,agency.storage_idStorage,finance,agency.financereport_idFinanceReport,agency.priceAllTour,hotel,agency.hotel_id_hotel," +
+            "country,agency.country_id_country,count (agency.airport_idAirport)) from Agency agency " +
+            "inner join Hotel hotel on hotel.idHotel=agency.hotel_id_hotel " +
+            "join GroupTourist groupTourist on groupTourist.idGroupTourist=agency.grouptourist_idGroupTourist " +
+            "inner join Airport airport on airport.idAirport=agency.airport_idAirport " +
+            "join Tour tour on tour.idTour=agency.tour_idTour " +
+            "join Storage storage on storage.idStorage=agency.storage_idStorage " +
+            "join Country country on country.idCountry=agency.country_id_country " +
+            "join FinanceReport finance on finance.idFinanceReport=agency.financereport_idFinanceReport " +
+            "group by airport.nameJourney order by agency.airport_idAirport")
+    List<Agency>selectAmountAir();
 
-
+    //count(agency.hotel_id_hotel)
 
 
 }

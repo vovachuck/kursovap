@@ -106,6 +106,10 @@ public class RequestService implements IRequest {
         return  list;
     }
 
+    @Override
+    public List<Agency> selectAmountAir() {
+        return agencyRepository.selectAmountAir();
+    }
 
 
 }

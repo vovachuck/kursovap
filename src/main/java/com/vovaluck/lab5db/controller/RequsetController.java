@@ -93,5 +93,9 @@ public class RequsetController {
         return  requestService.selectAmountAgencyHotel();
     }
 
+    @RequestMapping("/request11")
+    List<Agency> selectAmountAir(){
+        return  requestService.selectAmountAir();
+    }
 
 }
