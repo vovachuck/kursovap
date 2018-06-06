@@ -13,7 +13,7 @@ App.controller('Country',function ($http,$scope) {
             $(selector).empty();
             for (var i = 0; i < customs.length; i++) {
                 var option = document.createElement("option");
-                option.text = customs[i].nationality;
+                option.text = customs[i].idCustoms;
                 option.value = customs[i].idCustoms;
                 selector.add(option);
 
@@ -67,7 +67,7 @@ App.controller('Country',function ($http,$scope) {
                 if (customs[i].idCustoms == customs){
                     option.selected = 'selected';
                 }
-                option.text = customs[i].nationality;
+                option.text = customs[i].idCustoms;
                 option.value = customs[i].idCustoms;
                 selector.add(option);
 

@@ -13,7 +13,7 @@ App.controller('Agency',function ($http,$scope) {
             $(selector).empty();
             for (var i = 0; i < group.length; i++) {
                 var option = document.createElement("option");
-                option.text = group[i].firstName;
+                option.text = group[i].idGroupTourist;
                 option.value = group[i].idGroupTourist;
                 selector.add(option);
 
@@ -50,7 +50,7 @@ App.controller('Agency',function ($http,$scope) {
                     $(selector).empty();
                     for (var i = 0; i < store.length; i++) {
                         var option = document.createElement("option");
-                        option.text = store[i].marking;
+                        option.text = store[i].idStorage;
                         option.value = store[i].idStorage;
                         selector.add(option);
 
@@ -74,7 +74,7 @@ App.controller('Agency',function ($http,$scope) {
                             $(selector).empty();
                             for (var i = 0; i < hotel.length; i++) {
                                 var option = document.createElement("option");
-                                option.text = hotel[i].hotelName;
+                                option.text = hotel[i].idHotel;
                                 option.value = hotel[i].idHotel;
                                 selector.add(option);
 
@@ -87,7 +87,7 @@ App.controller('Agency',function ($http,$scope) {
                                 $(selector).empty();
                                 for (var i = 0; i < country.length; i++) {
                                     var option = document.createElement("option");
-                                    option.text = country[i].nameCountry;
+                                    option.text = country[i].idCountry;
                                     option.value = country[i].idCountry;
                                     selector.add(option);
 

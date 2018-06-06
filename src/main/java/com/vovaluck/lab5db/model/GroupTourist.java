@@ -13,38 +13,26 @@ public class GroupTourist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_group_tourist")
     private int idGroupTourist;
-
-    //@Column(nullable = false)
     @Column(name = "first_name")
     private String firstName;
-
     @Column(name = "last_name")
     private String lastName;
-
     @Column(name = "sur_name")
     private String surName;
-
     @Column(name = "passport_data")
     private LocalDate passportData;
-
     @Column(name = "gender")
     private String gender;
-
     @Column(name = "kids")
     private String kids;
-
     @Column(name = "hotel")
     private String hotel;
-
     @Column(name = "old")
     private int old;
-
     @Column(name = "category")
     private String category;
-
     @Column(name = "name_group")
     private String nameGroup;
-
     @Column(name = "dob")
     private LocalDate dateOfBirth;
 

@@ -1,11 +1,9 @@
 package com.vovaluck.lab5db.model;
-
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
-
 @Entity
 @Table(name = "agency")
 @EntityListeners(AuditingEntityListener.class)
@@ -14,62 +12,41 @@ public class Agency {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_agency")
     private int idAgency;
-
-    //@Column(nullable = false)
-
-
-
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "grouptourist_id_group_tourist", insertable = false, updatable = false)
     private GroupTourist groupTourist;
-
     @Column(name = "grouptourist_id_group_tourist")
     private int grouptourist_idGroupTourist;
-
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "airport_id_airport", insertable = false, updatable = false)
     private Airport airport;
-
     @Column(name = "airport_id_airport")
     private int airport_idAirport;
-
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "tour_id_tour", insertable = false, updatable = false)
     private Tour tour;
-
     @Column(name = "tour_id_tour",nullable = true)
-
     private int tour_idTour;
-
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "storage_id_storage", insertable = false, updatable = false)
     private Storage storage;
-
     @Column(name = "storage_id_storage",nullable = true)
-
     private int storage_idStorage;
-
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "financereport_id_finance_report", insertable = false, updatable = false)
     private FinanceReport financeReport;
-
     @Column(name = "financereport_id_finance_report")
     private int financereport_idFinanceReport;
-
     @Column(name = "price_all_tour")
     private double priceAllTour;
-
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "hotel_id_hotel", insertable = false, updatable = false)
     private Hotel hotel;
-
     @Column(name = "hotel_id_hotel")
     private int hotel_id_hotel;
-
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "country_id_country", insertable = false, updatable = false)
     private Country country;
-
     @Column(name = "country_id_country")
     private int country_id_country;
     @Transient
